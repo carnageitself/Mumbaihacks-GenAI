@@ -1,81 +1,88 @@
-import React, { useContext } from "react";
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import './Navbar.css';
+import { Link } from 'react-router-dom';
 
-import { AuthContext } from "../../../context/AuthContext";
+import { AuthContext } from '../../../context/AuthContext';
+
+
 
 const Navbar = () => {
-  const { currentUser } = useContext(AuthContext);
+
+  const { currentUser } = useContext(AuthContext)
+
+
+
+
+
 
   const menuItem = (
     <>
       <li>
-        <Link className="text-black" to="/">
-          HOME
-        </Link>
+        <Link className='text-black' to="/">HOME</Link>
+      </li>
+      <li>
+        <Link className='text-black' to="/search">SEARCH</Link>
       </li>
 
-      {currentUser?.isAuthenticated ? (
-        <div className="flex lg:flex-row flex-col">
+
+      {currentUser?.isAuthenticated ?
+        (<div className='flex lg:flex-row flex-col'>
           <li>
-            <Link className="text-black" to="/playquiz">
-              PLAY QUIZ
-            </Link>
+            <Link className='text-black' to="/profile">PROFILE</Link>
+          </li>
+          <li>
+            <Link className='text-black' to="/playquiz">PLAY QUIZ</Link>
           </li>
 
           <li>
-            <Link className="text-black" to="/summarizer">
-              SUMMARIZER
-            </Link>
+            <Link className='text-black' to="/summarizer">SUMMARIZER</Link>
           </li>
 
-          {currentUser?.user?.role === "admin" && (
-            <li>
-              <Link className="text-black" to="/addquiz">
-                ADD
-              </Link>
-            </li>
-            
-          )}
+          {currentUser?.user?.role === "admin" && <li>
+            <Link className='text-black' to="/admin">ADMIN</Link>
+          </li>}
+        </div>) : (<>
           <li>
-            <Link className="text-black" to="/profile">
-              PROFILE
-            </Link>
+            <Link className='text-black' to="/login">LOGIN</Link>
           </li>
-        </div>
-      ) : (
-        <>
           <li>
-            <Link className="text-black" to="/login">
-              LOGIN
-            </Link>
+            <Link className='text-black' to="/signup">SIGNUP</Link>
           </li>
-        </>
-      )}
+        </>)}
+      {/* <li>
+        <Link to="/problems">PROBLEMS</Link>
+      </li>
+      <li>
+        <Link to="/ide">IDE</Link>
+      </li>
+      <li>
+        <Link to="/competition">COMPETITION</Link>
+      </li>
+      <li>
+        <Link to="/discussion">DISCUSSION</Link>
+      </li>
+     
+      <li>
+        <Link to="/collaboration">COLLABORATION</Link>
+      </li> */}
+
+
     </>
+
   );
 
   return (
-    <div className="navbar h-16 w-screen  shadow-md text-sm   bg-transparent transition-all ease-linear duration-500 sticky top-0 z-20 start-0 border-b border-gray-200 ">
+    <div className="navbar h-16 w-screen  shadow-md text-sm   bg-slate-100/60  fixed  z-20 top-0 start-0 border-b border-gray-200 ">
       <div className="flex sm:mx-24 mx-5  w-full h-full justify-between items-center ">
-        <Link
-          to="/"
-          className=" font-serif  mt-4 sm:text-2xl text-xl mb-5   font-extrabold"
-          style={{ fontFamily: "Poppins", color: "#2D80F6" }}
-        >
-          {" "}
-          Crystal <span className="text-[#09BD81]">Concept</span>
-        </Link>
+
+        <Link to='/' className=' font-serif  mt-4 sm:text-2xl text-xl mb-5   font-extrabold' style={{ fontFamily: 'Poppins', color: '#2D80F6' }}>   Crystal <span className='text-[#09BD81]'>Concept</span></Link>
 
         <div className=" hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menuItem}</ul>
         </div>
 
         <div className="dropdown block sm:hidden dropdown-end ">
-          <label
-            tabIndex={0}
-            className="btn btn-ghost btn-outline  border-2 border-black  lg:hidden"
-          >
+          <label tabIndex={0} className="btn btn-ghost btn-outline  border-2 border-black  lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -99,7 +106,9 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </div >
+
+
   );
 };
 
