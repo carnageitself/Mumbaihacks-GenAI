@@ -69,7 +69,7 @@ export const getSingleQuiz = async (id) => {
         const res = await axios.get(`${server}/quiz/single/${id}`, {
             'withCredentials': true
         })
-
+console.log(res,"success");
         return res
     } catch (error) {
         console.log(error.response.data.message);

@@ -40,15 +40,15 @@ const Home = () => {
 
           <img
             src={hero}
-            className="sm:h-[90vh] h-full  absolute md:relative "
-            alt="h/ero"
+            className="sm:h-[100vh] h-full  relative"
+            alt="hero"
           />
         </div>
 
         <h1 className="text-start lg:text-4xl  border-blue-500 border-b-2 sm:font-extrabold text-3xl font-bold text-black font-sans">
           Features
         </h1>
-        <section className=" bg-slate-100 sm:px-28 px-8 py-5 h-full flex-col gap-y-20     flex  w-full justify-between items-center">
+        <section className=" bg-slate-100 sm:px-28 px-8 py-20 h-full flex-col gap-y-20     flex  w-full justify-between items-center">
           <Feature
             ideabg={ideabg2}
             linkto={"/addquiz"}

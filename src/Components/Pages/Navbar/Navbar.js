@@ -56,7 +56,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar h-16 w-screen  shadow-md text-sm   bg-slate-100/60  fixed  z-20 top-0 start-0 border-b border-gray-200 ">
+    <div className="navbar h-16 w-screen  shadow-md text-sm   bg-transparent transition-all ease-linear duration-500 sticky top-0 z-20 start-0 border-b border-gray-200 ">
       <div className="flex sm:mx-24 mx-5  w-full h-full justify-between items-center ">
         <Link
           to="/"
