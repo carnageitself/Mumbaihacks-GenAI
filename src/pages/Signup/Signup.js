@@ -18,7 +18,7 @@ const Signup = () => {
 	const [password, setPassword] = useState("")
 	const [compassword, setComPassword] = useState("")
 	const [checked, setChecked] = useState(false)
-	const [email, setEmail] = useState()
+	const [email, setEmail] = useState("")
 
 	const { setCurrentUser } = useContext(AuthContext)
 	const handleSubmit = async (e) => {
