@@ -177,6 +177,7 @@ export const AddQuiz = () => {
         onSubmit={handleCreateQuiz}
         className="flex md:border-r-4 md:border-b-0 border-b-4  p-6 flex-col gap-5 items-start justify-center "
       >
+         <div className=" overflow-y-scroll no-scrollbar  scroll-smooth h-80 scrollbar">
         <div className="flex justify-between items-center text-center gap-5  w-full">
           <input
             type="text"
@@ -190,7 +191,7 @@ export const AddQuiz = () => {
         
         </div>
 
-        <div className=" overflow-y-scroll no-scrollbar  scroll-smooth h-80 scrollbar">
+       
           {questions?.map((question, index) => (
             <div key={index} className="">
               <div className="flex gap-3 items-center my-2 justify-between px-5">

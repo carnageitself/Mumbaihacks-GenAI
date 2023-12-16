@@ -9,64 +9,30 @@ import { AuthContext } from '../../../context/AuthContext';
 const Navbar = () => {
 
   const { currentUser } = useContext(AuthContext)
-
-
-
-
-
-
   const menuItem = (
     <>
       <li>
         <Link className='text-black' to="/">HOME</Link>
       </li>
-      <li>
-        <Link className='text-black' to="/search">SEARCH</Link>
-      </li>
-
 
       {currentUser?.isAuthenticated ?
         (<div className='flex lg:flex-row flex-col'>
-          <li>
-            <Link className='text-black' to="/profile">PROFILE</Link>
-          </li>
-          <li>
-            <Link className='text-black' to="/playquiz">PLAY QUIZ</Link>
-          </li>
-
+       
           <li>
             <Link className='text-black' to="/summarizer">SUMMARIZER</Link>
           </li>
 
           {currentUser?.user?.role === "admin" && <li>
-            <Link className='text-black' to="/admin">ADMIN</Link>
+            <Link className='text-black' to="/addquiz">ADD</Link>
           </li>}
         </div>) : (<>
           <li>
             <Link className='text-black' to="/login">LOGIN</Link>
           </li>
-          <li>
-            <Link className='text-black' to="/signup">SIGNUP</Link>
-          </li>
         </>)}
-      {/* <li>
-        <Link to="/problems">PROBLEMS</Link>
-      </li>
-      <li>
-        <Link to="/ide">IDE</Link>
-      </li>
-      <li>
-        <Link to="/competition">COMPETITION</Link>
-      </li>
-      <li>
-        <Link to="/discussion">DISCUSSION</Link>
-      </li>
-     
-      <li>
-        <Link to="/collaboration">COLLABORATION</Link>
-      </li> */}
-
-
+        <li>
+            <Link className='text-black' to="/profile">PROFILE</Link>
+          </li>
     </>
 
   );
