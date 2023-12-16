@@ -18,11 +18,6 @@ const Navbar = () => {
       {currentUser?.isAuthenticated ? (
         <div className="flex lg:flex-row flex-col">
           <li>
-            <Link className="text-black" to="/profile">
-              PROFILE
-            </Link>
-          </li>
-          <li>
             <Link className="text-black" to="/playquiz">
               PLAY QUIZ
             </Link>
@@ -40,7 +35,13 @@ const Navbar = () => {
                 ADMIN
               </Link>
             </li>
+            
           )}
+          <li>
+            <Link className="text-black" to="/profile">
+              PROFILE
+            </Link>
+          </li>
         </div>
       ) : (
         <>

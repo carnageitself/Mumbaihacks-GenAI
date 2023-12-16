@@ -17,9 +17,8 @@ const Signup = () => {
 	const [phone, setPhone] = useState("")
 	const [password, setPassword] = useState("")
 	const [compassword, setComPassword] = useState("")
-	const [location, setLocation] = useState("")
 	const [checked, setChecked] = useState(false)
-	const [std, setStd] = useState()
+	const [email, setEmail] = useState()
 
 	const { setCurrentUser } = useContext(AuthContext)
 	const handleSubmit = async (e) => {
@@ -30,7 +29,7 @@ const Signup = () => {
 		else if (checked === false) { alert("please check terms and privacy policy") }
 		else {
 
-			const res = await userRegister({ name, phone, std, location, password })
+			const res = await userRegister({ name, phone, email, password })
 			if (res?.data?.success) {
 				alert('Successfully registered')
 				loadUser().then((data) => {
@@ -95,25 +94,16 @@ const Signup = () => {
 
 					<div className="form-control">
 						<input
-							type="Number"
-							placeholder="standard"
-							maxlength="2"
-							name="standard"
+							type="Email"
+							placeholder="email"
+
+							name="email"
 							className="border-b-2 p-3 outline-none"
-							onChange={(e) => setStd(e.target.value)}
-							value={std}
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
 						/>
 					</div>
-					<div className="form-control">
-						<input
-							type="text"
-							placeholder="city"
-							name="location"
-							className="border-b-2 p-3 outline-none"
-							onChange={(e) => setLocation(e.target.value)}
-							value={location}
-						/>
-					</div>
+					
 					<div className="form-control">
 						<input
 							type="password"
