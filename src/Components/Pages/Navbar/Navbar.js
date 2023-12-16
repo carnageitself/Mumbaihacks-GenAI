@@ -31,8 +31,8 @@ const Navbar = () => {
 
           {currentUser?.user?.role === "admin" && (
             <li>
-              <Link className="text-black" to="/admin">
-                ADMIN
+              <Link className="text-black" to="/addquiz">
+                ADD
               </Link>
             </li>
             

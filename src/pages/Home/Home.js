@@ -51,11 +51,11 @@ const Home = () => {
         <section className=" bg-slate-100 sm:px-28 px-8 py-5 h-full flex-col gap-y-20     flex  w-full justify-between items-center">
           <Feature
             ideabg={ideabg2}
-            linkto={"/playquiz"}
+            linkto={"/addquiz"}
             title="Quizzes"
             description="Explore our collection of quizzes designed to reinforce your understanding of various subjects.
 						Whether you're studying for exams or just want to challenge yourself"
-            buttonText="Get started"
+            buttonText="Generate Quiz"
           />
 
           <Feature
@@ -68,11 +68,7 @@ const Home = () => {
           />
         </section>
 
-        <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-          <aside>
-            <p>Copyright © 2023 - All right reserved by CC </p>
-          </aside>
-        </footer>
+       
       </div>
     </>
   );
